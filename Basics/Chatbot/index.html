@@ -20,15 +20,23 @@
     <script type="text/babel">
 
 
-        function ChatMessage(){
-            return(
-                <>
+        function ChatMessage({message,sender}){
+            /* if(sender === "user"){
+                return(
                 <div>
-                    Hello Chatbot
-                    <img src="" />
+                    {message}
+                    <img src="./Images/Default_profile_user.jpg" width="40px" />
                     </div>
-                </>
             )
+                } */
+            return(
+                <div>
+                    {sender==="AI" && <img src="./Images/Gemini.jpg" alt="Loading..." width="50px" />}
+                    {message}
+                    {sender==="user" && <img src="./Images/Default_profile_user.jpg" alt="Loading..." width="50px" />}
+
+                    </div>
+            )       
         }
 
         function ChatInput(){
@@ -42,7 +50,11 @@
 
         const content = (<>
                 <ChatInput />
-                <ChatMessage />
+                <ChatMessage message="Hello Chatbot" sender="user"/>
+                <ChatMessage message="Hi there!" sender="AI"/>
+                <ChatMessage message="Whats today's date" sender="user"/>
+                <ChatMessage message="15 May 2026" sender="AI"/>
+
             </>)
 
 
