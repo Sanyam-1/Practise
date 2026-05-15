@@ -8,6 +8,7 @@
     <script src="https://unpkg.com/supersimpledev/react.js"></script>
     <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
 
 </head>
 <body>
@@ -18,19 +19,27 @@
 
     <script type="text/babel">
 
-        const content = <div>
-                <button type="button">Submit</button>
-                <p>
-                    This the most basic react project    
-                </p>
-            
-            </div>
+        
 
         const container = document.querySelector('#js-container')
         const root = ReactDOM.createRoot(container)
         root.render(content)
         
-        
+        const content = <div>
+                <button type="button">Submit</button>
+                <p>
+                    This the most basic react project    
+                </p>
+                <p>
+                    Currennt Time: {setInterval(()=>{
+                        var time = <p>
+                            {dayjs().format('HH:mm:ss')}
+                            </p>
+
+                            root.render(time)
+                    },1000)}
+                    </p>
+            </div>
 
 
     </script>
