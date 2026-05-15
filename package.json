@@ -2,11 +2,28 @@
   "name": "fourth",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://github.com/SanyamJain-1/React_practise#readme",
+  "bugs": {
+    "url": "https://github.com/SanyamJain-1/React_practise/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SanyamJain-1/React_practise.git"
+  },
   "license": "ISC",
-  "author": "",
+  "author": "Sanyam",
   "type": "commonjs",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.20",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "reactdom": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }
