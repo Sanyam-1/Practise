@@ -1,71 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chatbot</title>
 
     <script src="https://unpkg.com/supersimpledev/react.js"></script>
     <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
-    
-
-</head>
-<body>
-    
-    <div id="container">
-
-    </div>
+  </head>
+  <body>
+    <div id="container"></div>
 
     <script type="text/babel">
+      function ChatMessage({ message, sender }) {
+       
+        return (
+          <div>
+            {sender === "AI" && (
+              <img 
+                src="./Images/Gemini.jpg" 
+                alt="Loading..." 
+                width="50px" 
+                />
+            )}
+            {message}
+            {sender === "user" && (
+              <img
+                src="./Images/Default_profile_user.jpg"
+                alt="Loading..."
+                width="50px"
+              />
+            )}
+          </div>
+        );
+      }
 
+      function ChatInput() {
+        return (
+          <>
+            <input 
+                type="text" 
+                placeholder="Write Message Here" 
+                size="35" 
+            />
+            <button type="submit">
+                Send
+            </button>
+          </>
+        );
+      }
 
-        function ChatMessage({message,sender}){
-            /* if(sender === "user"){
-                return(
-                <div>
-                    {message}
-                    <img src="./Images/Default_profile_user.jpg" width="40px" />
-                    </div>
-            )
-                } */
-            return(
-                <div>
-                    {sender==="AI" && <img src="./Images/Gemini.jpg" alt="Loading..." width="50px" />}
-                    {message}
-                    {sender==="user" && <img src="./Images/Default_profile_user.jpg" alt="Loading..." width="50px" />}
-
-                    </div>
-            )       
-        }
-
-        function ChatInput(){
-            return(
-                <>
-                    <input type="text" placeholder="Write Message Here" size="35" />
-                    <button type="submit">Send</button>
-                </>
-            )
-        }
-
-        const content = (<>
+      function App(){
+        return(
+            <>
                 <ChatInput />
-                <ChatMessage message="Hello Chatbot" sender="user"/>
-                <ChatMessage message="Hi there!" sender="AI"/>
-                <ChatMessage message="Whats today's date" sender="user"/>
-                <ChatMessage message="15 May 2026" sender="AI"/>
+                <ChatMessage 
+                    message="Hello Chatbot" 
+                    sender="user" 
+                />
+                <ChatMessage 
+                    message="Hi there!" 
+                    sender="AI" 
+                />
+                <ChatMessage 
+                    message="Whats today's date" 
+                    sender="user" 
+                />
+                <ChatMessage 
+                    message="15 May 2026" 
+                    sender="AI" 
+                />
+            </>
+        )
+      }
 
-            </>)
 
-
-        const container = document.getElementById('container')
-        const root = ReactDOM.createRoot(container)
-        root.render(content);
-
+      const container = document.getElementById("container");
+      const root = ReactDOM.createRoot(container);
+      root.render(<App />);
     </script>
-
-
-
-
-</body>
+  </body>
 </html>
