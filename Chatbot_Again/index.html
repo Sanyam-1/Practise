@@ -1,0 +1,60 @@
+  <!-- 
+    Hello Chatbot
+    Hello! How can I help You
+    Can you get me today's Date
+    Today is September 27
+    How about flip a coin
+    Sure! You got heads
+    Okay thank you
+    No problem! Let me know if you nneed anything else
+    -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>React</title>
+
+</head>
+<body>
+
+    <div id="container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+
+
+    <script type="text/babel">
+
+        function ChatInput(){
+            return(
+                <div>
+                    <input />
+                    <button> Send </button>
+                    </div>
+            )
+        }
+
+        function UserMessage({message}){
+            return(
+                <div>
+                    {message}
+                    <img src="" />
+                    </div>
+            )
+        }
+
+        const div = (
+            <div>
+                <ChatInput />
+                </div>
+        )
+
+        const container = document.querySelector('#container')
+        const root = ReactDOM.createRoot(container)
+        root.render("Hello ")
+
+    </script>
+</body>
+</html>
